@@ -1,0 +1,8 @@
+{
+  "task_code": "TASK-002",
+  "summary": "Implemented inventory.api.search_items, passed all 6 tests, and pushed project commit c1e830a to handoff-exp/F_full_context/run01.",
+  "artifacts": [
+    "outputs/handoff-exp/F_full_context/run01/TASK-002/handoff.json",
+    "outputs/handoff-exp/F_full_context/run01/TASK-002/usage.json"
+  ]
+}

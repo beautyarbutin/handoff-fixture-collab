@@ -1,0 +1,10 @@
+{
+  "goal": "Expose inventory catalog filtering through inventory.api.search_items for API clients.",
+  "changed_files": [
+    "src/inventory/api.py"
+  ],
+  "verification": "Ran python -m pytest tests evaluation_tests on Python 3.11.15; 6 tests passed in 0.02s (100% pass rate). Project commit c1e830a was pushed to origin/handoff-exp/F_full_context/run01.",
+  "unfinished_items": "",
+  "risks": "Filtering semantics remain delegated to inventory.catalog.filter_items as required. Exact API token input/output counts were not exposed by the execution environment, so usage.json records them as null and includes a documented estimate for the injected predecessor files.",
+  "next_steps": "Consume search_items from downstream API integration code; no implementation work remains for TASK-002."
+}

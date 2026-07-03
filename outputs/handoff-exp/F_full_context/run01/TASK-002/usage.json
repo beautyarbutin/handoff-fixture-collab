@@ -1,0 +1,19 @@
+{
+  "experiment_arm": "F_full_context",
+  "run": 1,
+  "agent": "codex",
+  "completed": true,
+  "tests_passed": true,
+  "tests_passed_count": 6,
+  "tests_total": 6,
+  "test_pass_rate": 1.0,
+  "accuracy_score": 5,
+  "accuracy_total": 5,
+  "prompt_tokens_estimated": 273,
+  "token_input": null,
+  "token_output": null,
+  "rework_count": 0,
+  "redispatch_count": 0,
+  "human_intervention_minutes": 0,
+  "notes": "All five rubric points and all six tests passed. The prompt token estimate covers the complete raw TASK-001 handoff.json and result.json text (1092 characters divided by 4 and rounded up). Exact API token counts were unavailable. The initial commit attempt was retried after configuring a repository-local Git author identity; no code rework, redispatch, or human intervention was required."
+}
