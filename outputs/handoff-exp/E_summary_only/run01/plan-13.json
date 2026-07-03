@@ -1,0 +1,21 @@
+{
+  "plan_name": "handoff ablation E_summary_only run01",
+  "tasks": [
+    {
+      "task_code": "TASK-001",
+      "task_name": "Prepare E_summary_only handoff",
+      "description": "The predecessor task is already complete. handoff.json and result.json exist in outputs/handoff-exp/E_summary_only/run01/TASK-001/. This task is only the handoff source. HALF must inject it using the E_summary_only arm as one natural-language summary without structured field labels.",
+      "assignee": "codex-pro",
+      "depends_on": [],
+      "expected_output": "outputs/handoff-exp/E_summary_only/run01/TASK-001/result.json"
+    },
+    {
+      "task_code": "TASK-002",
+      "task_name": "Implement inventory.api.search_items",
+      "description": "Use the E_summary_only handoff to implement src/inventory/api.py::search_items in https://github.com/beautyarbutin/handoff-fixture-inventory.git. Checkout branch handoff-exp/E_summary_only/run01 created from baseline ac64e8c; do not work on main. Reuse inventory.catalog.filter_items, support category, min_price, max_price and in_stock, ignore unknown query keys, raise ValueError for invalid min_price or max_price, and return plain dictionaries. Run python -m pytest tests evaluation_tests. Push code to the target branch and write handoff.json, usage.json and result.json under outputs/handoff-exp/E_summary_only/run01/TASK-002/ in the collaboration repository.",
+      "assignee": "codex-pro",
+      "depends_on": ["TASK-001"],
+      "expected_output": "outputs/handoff-exp/E_summary_only/run01/TASK-002/result.json"
+    }
+  ]
+}
