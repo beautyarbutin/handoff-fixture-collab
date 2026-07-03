@@ -1,0 +1,7 @@
+{
+  "task_code": "TASK-001",
+  "summary": "Prepared E_summary_only run01 handoff source for the successor task. HALF should inject the six source values as one natural-language summary without exposing structured field names.",
+  "artifacts": [
+    "outputs/handoff-exp/E_summary_only/run01/TASK-001/handoff.json"
+  ]
+}
