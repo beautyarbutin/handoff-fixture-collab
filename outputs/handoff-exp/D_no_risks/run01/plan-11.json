@@ -1,0 +1,45 @@
+{
+  "plan_name": "handoff-exp-D_no_risks-run01 TASK-002 pilot plan",
+  "tasks": [
+    {
+      "task_code": "TASK-002-01",
+      "task_name": "Prepare successor workspace",
+      "description": "Use the project repository https://github.com/beautyarbutin/handoff-fixture-inventory.git on branch handoff-exp/D_no_risks/run01, not main. Read the TASK-001 handoff supplied through the D_no_risks experiment path and inspect the relevant inventory modules and tests before editing.",
+      "assignee": "Codex Pro (codex-pro)",
+      "depends_on": [
+        "TASK-001"
+      ],
+      "expected_output": "Project repository is on branch handoff-exp/D_no_risks/run01 with the successor requirements understood from the handoff and local code context."
+    },
+    {
+      "task_code": "TASK-002-02",
+      "task_name": "Implement search_items API",
+      "description": "Implement src/inventory/api.py::search_items(query, items=None) according to the handoff and repository conventions. The API should support the required inventory search query parameters, validate API inputs where needed, and return client-facing plain dictionary results.",
+      "assignee": "Codex Pro (codex-pro)",
+      "depends_on": [
+        "TASK-002-01"
+      ],
+      "expected_output": "src/inventory/api.py exposes a working search_items implementation compatible with the existing inventory domain model and filtering behavior."
+    },
+    {
+      "task_code": "TASK-002-03",
+      "task_name": "Run required validation",
+      "description": "Run python -m pytest tests evaluation_tests in the project repository. If failures appear, make focused fixes within the TASK-002 scope and rerun the same command until the required suite passes or a concrete blocker is recorded.",
+      "assignee": "Codex Pro (codex-pro)",
+      "depends_on": [
+        "TASK-002-02"
+      ],
+      "expected_output": "Required pytest command result is captured, with passing tests or a specific blocker and failure details."
+    },
+    {
+      "task_code": "TASK-002-04",
+      "task_name": "Publish code and collaboration artifacts",
+      "description": "Commit and push project code changes to handoff-exp/D_no_risks/run01 in the project repository. Write TASK-002 result.json and usage.json under outputs/handoff-exp/D_no_risks/run01 in the HALF collaboration repository, then commit and push those collaboration artifacts.",
+      "assignee": "Codex Pro (codex-pro)",
+      "depends_on": [
+        "TASK-002-03"
+      ],
+      "expected_output": "Project branch is pushed with the implementation, and HALF contains the TASK-002 result and usage artifacts for polling."
+    }
+  ]
+}
