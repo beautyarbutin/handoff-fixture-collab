@@ -1,0 +1,44 @@
+{
+  "task_code": "TASK-002",
+  "experiment_arm": "E_summary_only",
+  "run": 1,
+  "project_repository": "https://github.com/beautyarbutin/handoff-fixture-inventory.git",
+  "project_branch": "handoff-exp/E_summary_only/run01",
+  "project_commit": "144b22e35eb4f8018dfe8431677cd0339b9cbb11",
+  "collaboration_repository": "https://github.com/beautyarbutin/handoff-fixture-collab.git",
+  "collaboration_branch": "main",
+  "generated_at": "2026-07-03T17:26:14.8593202+08:00",
+  "commands": [
+    "git pull --ff-only (project repository): Already up to date.",
+    "git pull --ff-only (collaboration repository): Already up to date.",
+    "git switch --track origin/handoff-exp/E_summary_only/run01",
+    "python -m pytest tests evaluation_tests: 6 passed in 0.03s.",
+    "boundary checks with PYTHONPATH=src: passed.",
+    "git commit -m \"Implement inventory search API\": 144b22e35eb4f8018dfe8431677cd0339b9cbb11",
+    "git push origin handoff-exp/E_summary_only/run01: succeeded."
+  ],
+  "verification": {
+    "command": "python -m pytest tests evaluation_tests",
+    "passed": 6,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "accuracy": {
+    "score": 5,
+    "total": 5,
+    "rate": 1.0,
+    "basis": "All five task acceptance areas are implemented and the complete visible test suite passes."
+  },
+  "tokens": {
+    "input": null,
+    "output": null,
+    "total": null,
+    "note": "Exact token counters are not exposed by this execution runtime."
+  },
+  "rework_count": 0,
+  "human_intervention_minutes": 0,
+  "code_changes": [
+    "src/inventory/api.py"
+  ],
+  "no_code_changes": false
+}
