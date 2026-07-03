@@ -1,0 +1,10 @@
+{
+  "goal": "Implement inventory.api.search_items by exposing reusable catalog filtering logic to API clients.",
+  "changed_files": [
+    "src/inventory/api.py"
+  ],
+  "verification": "Ran python -m pytest tests evaluation_tests in the project repository; 6 tests passed.",
+  "unfinished_items": "",
+  "risks": "search_items delegates filtering semantics to inventory.catalog.filter_items. Unknown query keys are ignored. min_price and max_price values are converted with float() and non-numeric, boolean, or non-finite values raise ValueError.",
+  "next_steps": ""
+}
