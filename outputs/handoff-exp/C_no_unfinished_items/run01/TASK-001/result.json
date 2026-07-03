@@ -1,0 +1,7 @@
+{
+  "task_code": "TASK-001",
+  "summary": "Prepared C_no_unfinished_items handoff source for successor task. HALF should inject this handoff through the C_no_unfinished_items arm so the unfinished_items field is hidden from the execution Agent.",
+  "artifacts": [
+    "outputs/handoff-exp/C_no_unfinished_items/run01/TASK-001/handoff.json"
+  ]
+}
