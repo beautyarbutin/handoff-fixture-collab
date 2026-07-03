@@ -1,0 +1,21 @@
+{
+  "plan_name": "handoff ablation B_no_verification run01",
+  "tasks": [
+    {
+      "task_code": "TASK-001",
+      "task_name": "准备 B_no_verification handoff",
+      "description": "前序任务已完成，handoff.json 和 result.json 已写入 HALF 协作仓库。该任务只作为后续任务的 handoff 来源。实验组为 B_no_verification，后续 prompt 注入时必须隐藏 verification 字段。",
+      "assignee": "codex-pro",
+      "depends_on": [],
+      "expected_output": "outputs/handoff-exp/B_no_verification/run01/TASK-001/result.json"
+    },
+    {
+      "task_code": "TASK-002",
+      "task_name": "实现 inventory.api.search_items",
+      "description": "根据前序 TASK-001 的 B_no_verification handoff，在目标仓库 handoff-fixture-inventory 中实现 src/inventory/api.py::search_items。必须先 checkout 目标仓库分支 handoff-exp/B_no_verification/run01，该分支从 baseline ac64e8c 创建；不得在 main 上执行。必须复用 inventory.catalog.filter_items，支持 category、min_price、max_price、in_stock，忽略未知 query key，非法 min_price/max_price 需要抛 ValueError，返回 plain dict 列表。完成后运行 python -m pytest tests evaluation_tests，并把结果写入 HALF 协作仓库 outputs/handoff-exp/B_no_verification/run01/TASK-002/result.json。",
+      "assignee": "codex-pro",
+      "depends_on": ["TASK-001"],
+      "expected_output": "outputs/handoff-exp/B_no_verification/run01/TASK-002/result.json"
+    }
+  ]
+}
