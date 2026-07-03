@@ -1,0 +1,11 @@
+{
+    "goal":  "Expose inventory filtering through inventory.api.search_items.",
+    "changed_files":  [
+                          "src/inventory/api.py",
+                          "tests/test_api.py"
+                      ],
+    "verification":  "Ran python -m pytest tests evaluation_tests: 10 passed in 0.07s.",
+    "unfinished_items":  "",
+    "risks":  "search_items delegates filtering semantics to inventory.catalog.filter_items. Price query values must be numeric int/float values; bool is rejected as an invalid price input.",
+    "next_steps":  "No follow-up required for TASK-002."
+}
