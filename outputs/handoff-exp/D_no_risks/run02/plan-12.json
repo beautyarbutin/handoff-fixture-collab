@@ -1,0 +1,21 @@
+{
+  "plan_name": "handoff ablation D_no_risks run02",
+  "tasks": [
+    {
+      "task_code": "TASK-001",
+      "task_name": "Prepare D_no_risks handoff",
+      "description": "The predecessor task is already complete. handoff.json and result.json have been written to the HALF collaboration repository https://github.com/beautyarbutin/handoff-fixture-collab.git under outputs/handoff-exp/D_no_risks/run02/TASK-001/. This task is only the handoff source for the successor task. The experiment arm is D_no_risks, so the execution prompt must hide the risks field and expose only goal, changed_files, verification, unfinished_items, and next_steps.",
+      "assignee": "codex-pro",
+      "depends_on": [],
+      "expected_output": "outputs/handoff-exp/D_no_risks/run02/TASK-001/result.json"
+    },
+    {
+      "task_code": "TASK-002",
+      "task_name": "Implement inventory.api.search_items",
+      "description": "Use the D_no_risks handoff from predecessor TASK-001 to implement src/inventory/api.py::search_items in the target code repository https://github.com/beautyarbutin/handoff-fixture-inventory.git. The execution Agent must checkout target code branch handoff-exp/D_no_risks/run02, which was created from baseline commit ac64e8c, and must not work on main. The implementation must reuse inventory.catalog.filter_items, support category, min_price, max_price, and in_stock, ignore unknown query keys, raise ValueError for invalid min_price or max_price, and return a list of plain dictionaries. After implementation, run python -m pytest tests evaluation_tests. Commit and push code changes to the target code repository branch handoff-exp/D_no_risks/run02. Write handoff.json, usage.json, and result.json to the HALF collaboration repository https://github.com/beautyarbutin/handoff-fixture-collab.git under outputs/handoff-exp/D_no_risks/run02/TASK-002/ and push them to the collaboration repository main branch.",
+      "assignee": "codex-pro",
+      "depends_on": ["TASK-001"],
+      "expected_output": "outputs/handoff-exp/D_no_risks/run02/TASK-002/result.json"
+    }
+  ]
+}
