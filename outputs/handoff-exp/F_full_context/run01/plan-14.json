@@ -1,0 +1,21 @@
+{
+  "plan_name": "handoff ablation F_full_context run01",
+  "tasks": [
+    {
+      "task_code": "TASK-001",
+      "task_name": "Prepare F_full_context handoff",
+      "description": "The predecessor task is complete. handoff.json and result.json exist under outputs/handoff-exp/F_full_context/run01/TASK-001/. This task is only the handoff source. HALF must inject both files verbatim using the F_full_context arm.",
+      "assignee": "codex-pro",
+      "depends_on": [],
+      "expected_output": "outputs/handoff-exp/F_full_context/run01/TASK-001/result.json"
+    },
+    {
+      "task_code": "TASK-002",
+      "task_name": "Implement inventory.api.search_items",
+      "description": "Use the F_full_context predecessor context to implement src/inventory/api.py::search_items in https://github.com/beautyarbutin/handoff-fixture-inventory.git. Checkout handoff-exp/F_full_context/run01 created from ac64e8c; do not modify main. Reuse inventory.catalog.filter_items, support category, min_price, max_price and in_stock, ignore unknown keys, raise ValueError for invalid price values, return plain dictionaries, and run python -m pytest tests evaluation_tests. Push code to the target branch and write TASK-002 outputs under outputs/handoff-exp/F_full_context/run01/.",
+      "assignee": "codex-pro",
+      "depends_on": ["TASK-001"],
+      "expected_output": "outputs/handoff-exp/F_full_context/run01/TASK-002/result.json"
+    }
+  ]
+}
