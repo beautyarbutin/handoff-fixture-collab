@@ -1,0 +1,21 @@
+{
+  "plan_name": "handoff ablation C_no_unfinished_items run01",
+  "tasks": [
+    {
+      "task_code": "TASK-001",
+      "task_name": "准备 C_no_unfinished_items handoff",
+      "description": "前序任务已完成，handoff.json 和 result.json 已写入 HALF 协作仓库 https://github.com/beautyarbutin/handoff-fixture-collab.git 的 outputs/handoff-exp/C_no_unfinished_items/run01/TASK-001/。该任务只作为后续任务的 handoff 来源。实验组为 C_no_unfinished_items，后续执行 prompt 注入时必须隐藏 unfinished_items 字段，只暴露 goal、changed_files、verification、risks、next_steps。",
+      "assignee": "codex-pro",
+      "depends_on": [],
+      "expected_output": "outputs/handoff-exp/C_no_unfinished_items/run01/TASK-001/result.json"
+    },
+    {
+      "task_code": "TASK-002",
+      "task_name": "实现 inventory.api.search_items",
+      "description": "根据前序 TASK-001 的 C_no_unfinished_items handoff，在目标代码仓库 https://github.com/beautyarbutin/handoff-fixture-inventory.git 中实现 src/inventory/api.py::search_items。必须先 checkout 目标代码分支 handoff-exp/C_no_unfinished_items/run01，该分支从 baseline commit ac64e8c 创建；不得在 main 上执行。必须复用 inventory.catalog.filter_items，支持 category、min_price、max_price、in_stock，忽略未知 query key，非法 min_price/max_price 需要抛 ValueError，返回 plain dict 列表。完成后运行 python -m pytest tests evaluation_tests。代码修改提交并 push 到目标代码仓库的 handoff-exp/C_no_unfinished_items/run01 分支；协作产物 handoff.json、usage.json、result.json 写入 HALF 协作仓库 https://github.com/beautyarbutin/handoff-fixture-collab.git 的 outputs/handoff-exp/C_no_unfinished_items/run01/TASK-002/，并提交 push 到协作仓库 main。",
+      "assignee": "codex-pro",
+      "depends_on": ["TASK-001"],
+      "expected_output": "outputs/handoff-exp/C_no_unfinished_items/run01/TASK-002/result.json"
+    }
+  ]
+}
