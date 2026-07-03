@@ -1,0 +1,8 @@
+{
+  "task_code": "TASK-001",
+  "summary": "Prepared A_full handoff for successor task.",
+  "artifacts": [
+    "outputs/handoff-exp/A_full/run01/TASK-001/handoff.json"
+  ]
+}
+
