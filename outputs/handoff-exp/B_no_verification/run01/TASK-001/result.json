@@ -1,0 +1,7 @@
+{
+  "task_code": "TASK-001",
+  "summary": "Prepared B_no_verification handoff source for successor task. HALF should inject this handoff through the B_no_verification arm so the verification field is hidden from the execution Agent.",
+  "artifacts": [
+    "outputs/handoff-exp/B_no_verification/run01/TASK-001/handoff.json"
+  ]
+}
