@@ -1,0 +1,45 @@
+{
+  "plan_name": "A_full run01 TASK-002 balanced execution plan",
+  "tasks": [
+    {
+      "task_code": "TASK-002-01",
+      "task_name": "Consume handoff and inspect project context",
+      "description": "Read outputs/handoff-exp/A_full/run01/TASK-001/handoff.json, clone or update handoff-fixture-inventory, inspect src/inventory/catalog.py, src/inventory/models.py, src/inventory/api.py, tests, and evaluation_tests to confirm the required search_items behavior before editing.",
+      "assignee": "codex-pro",
+      "depends_on": [
+        "TASK-001"
+      ],
+      "expected_output": "Confirmed implementation notes for search_items, including existing filter_items reuse path, dictionary response shape, supported query keys, numeric validation expectations, and relevant test coverage."
+    },
+    {
+      "task_code": "TASK-002-02",
+      "task_name": "Implement inventory API search",
+      "description": "Implement src/inventory/api.py::search_items(query, items=None) in handoff-fixture-inventory using the reusable inventory.catalog.filter_items logic from the handoff. Preserve case-insensitive category matching, inclusive min_price and max_price bounds, ignored unknown query keys, and conversion of Item objects to plain dictionaries for API clients. Add focused API-level tests only if existing tests do not cover required behavior.",
+      "assignee": "codex-pro",
+      "depends_on": [
+        "TASK-002-01"
+      ],
+      "expected_output": "Project repository contains a scoped implementation of search_items, with any necessary focused tests committed alongside the code."
+    },
+    {
+      "task_code": "TASK-002-03",
+      "task_name": "Run required verification",
+      "description": "Run python -m pytest tests evaluation_tests in the handoff-fixture-inventory repository on the same server. Investigate and fix any failures that are caused by the TASK-002 implementation.",
+      "assignee": "codex-pro",
+      "depends_on": [
+        "TASK-002-02"
+      ],
+      "expected_output": "Verification result from python -m pytest tests evaluation_tests, with passing output or a documented blocker if an external issue prevents completion."
+    },
+    {
+      "task_code": "TASK-002-04",
+      "task_name": "Publish repository changes and HALF outputs",
+      "description": "Commit and push code, test, and business-file changes to handoff-fixture-inventory. Write TASK-002 task outputs, result.json, and usage.json under outputs/handoff-exp/A_full/run01 in handoff-fixture-collab, then commit and push those HALF artifacts.",
+      "assignee": "codex-pro",
+      "depends_on": [
+        "TASK-002-03"
+      ],
+      "expected_output": "Both repositories are pushed. HALF contains the TASK-002 artifacts required by the poller, including result.json and usage.json in the collaboration directory."
+    }
+  ]
+}
